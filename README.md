@@ -2,9 +2,7 @@
 
 ## Simple Bank
 
-### NOTE: Use Node 16 LTS
-
-## Usage - Run whole project at once
+### Usage - Run whole project at once
 
 ```
 docker-compose up --build
@@ -59,3 +57,6 @@ mutation makeTransaction {
 - We can add multiple environment files to build on different environments
 - We can add migrations instead of `synchronize: true` as it is more secure for production
 - we can disable graphql debug and playground on production
+- Need to update resolver to get formatted currency from cents to euros
+- We can create transaction service as a queue. Then we can use it to implement retry failed jobs.
+- Add CI to run tests on Github actions to keep the repository unbreakable
