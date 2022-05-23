@@ -1,0 +1,39 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Account {
+  account_id: String!
+  balance: Int!
+  created_at: String!
+  updated_at: String!
+}
+
+type Transaction {
+  transaction_id: String!
+  amount: Int!
+  from: String!
+  to: String!
+  created_at: String!
+  updated_at: String!
+}
+
+type Query {
+  getAllAccounts: [Account!]!
+  getCurrentBalance(account_id: String!): Int!
+}
+
+type Mutation {
+  createAccount(accountInput: AccountCreateDTO!): Account!
+  makeTransaction(createTransactionInput: CreateTransactionInput!): Transaction!
+}
+
+input AccountCreateDTO {
+  balance: Float!
+}
+
+input CreateTransactionInput {
+  amount: Float!
+  from: String!
+  to: String!
+}
