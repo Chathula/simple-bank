@@ -55,7 +55,7 @@ mutation makeTransaction {
 ## Notes
 
 - We can add database transactions with rollbacks for transactions
-- We can write unit tests and e2e tests more with higher code coverage to improve the codebase quality
+- We can write more unit tests and e2e tests more with higher code coverage to improve the codebase quality
 - We can add multiple environment files to build on different environments
 - We can add migrations instead of `synchronize: true` as it is more secure for production
 - we can disable graphql debug and playground on production
