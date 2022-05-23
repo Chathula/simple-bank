@@ -19,3 +19,4 @@ yarn start:prod
 - We can add database transactions with rollbacks for transactions
 - We can write unit tests and e2e tests more with higher code coverage to improve the codebase quality
 - We can add docker support to run the application easily on any environment
+- We can use configs through environment variables instead of hard-coding values as a best practice
