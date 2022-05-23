@@ -1,0 +1,30 @@
+version: "3"
+services:
+  api:
+    env_file:
+      - .env
+    build:
+      context: .
+    ports:
+      - '6981:3000'
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+      - /app/node_modules
+    networks:
+      - postgres
+
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    ports:
+    - "5432:5432"
+    env_file:
+    - .env
+    networks:
+    - postgres
+
+networks:
+  postgres:
+    driver: bridge

@@ -3,18 +3,18 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { AccountModule } from './account/account.module';
-import { join } from 'path/posix';
+import { join } from 'path';
 import { TransactionModule } from './transaction/transaction.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'chathula',
-      password: '',
-      database: 'simple-bank',
+      host: process.env.POSTGRES_HOST || 'localhost',
+      port: Number(process.env.POSTGRES_PORT) || 5432,
+      username: process.env.POSTGRES_USER || 'postgres',
+      password: process.env.POSTGRES_PASSWORD || '',
+      database: process.env.POSTGRES_DB || 'simple-bank',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
